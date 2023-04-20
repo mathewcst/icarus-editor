@@ -1,6 +1,7 @@
 <script lang="ts">
 	import '$/app.css';
 	import '@fontsource/lato';
+	import 'iconify-icon';
 
 	import Header from './components/Header.svelte';
 </script>
@@ -9,6 +10,8 @@
 	<Header />
 
 	<main>
-		<slot />
+		<div class="container max-w-screen-lg py-4 mx-auto">
+			<slot />
+		</div>
 	</main>
 </div>
