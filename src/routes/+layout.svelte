@@ -3,6 +3,7 @@
 	import '@fontsource/lato';
 	import 'iconify-icon';
 
+	import Footer from './components/Footer.svelte';
 	import Header from './components/Header.svelte';
 </script>
 
@@ -14,4 +15,12 @@
 			<slot />
 		</div>
 	</main>
+
+	<Footer />
 </div>
+
+<style>
+	main {
+		min-height: calc(100vh - 8rem);
+	}
+</style>

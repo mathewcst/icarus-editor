@@ -1,6 +1,7 @@
 export interface Generator {
 	name: string;
-	power: number;
+	power?: number;
+	water?: number;
 }
 
 export const generators: Generator[] = [
@@ -15,5 +16,10 @@ export const generators: Generator[] = [
 	{
 		name: "Water Wheel",
 		power: 2000
+	},
+	{
+		name: "Water Pump",
+		power: 0,
+		water: 1000
 	}
 ]

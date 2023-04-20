@@ -14,9 +14,9 @@
 			icon: 'mdi:home'
 		},
 		{
-			name: 'Power Calculator',
-			link: '/power',
-			icon: 'material-symbols:power-plug'
+			name: 'Calculator',
+			link: '/calculator',
+			icon: 'mdi:calculator-variant-outline'
 		}
 	];
 </script>
