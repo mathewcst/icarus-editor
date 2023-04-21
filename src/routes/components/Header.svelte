@@ -37,13 +37,6 @@
 				{/each}
 				<li class="disabled">
 					<button class="disabled">
-						<iconify-icon icon="mdi:map" class="text-xl" />
-						Map
-						<div class="badge badge-error badge-sm">Soon</div>
-					</button>
-				</li>
-				<li class="disabled">
-					<button class="disabled">
 						<iconify-icon icon="material-symbols:lab-profile-outline" class="text-xl" />
 						Profile Editor
 						<div class="badge badge-error badge-sm">Soon</div>
