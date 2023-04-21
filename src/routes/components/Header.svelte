@@ -32,12 +32,12 @@
 				{#each menu as item}
 					<li>
 						<a href={item.link} class:active={item.link === $page.url.pathname}>
-							<iconify-icon icon={item.icon} class="text-xl" />
+							<iconify-icon icon={item.icon} class="hidden text-xl sm:block" />
 							{item.name}
 						</a>
 					</li>
 				{/each}
-				<li class="disabled">
+				<li class="hidden disabled sm:block">
 					<button class="disabled">
 						<iconify-icon icon="material-symbols:lab-profile-outline" class="text-xl" />
 						Profile Editor

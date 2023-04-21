@@ -187,7 +187,7 @@
 						</th>
 					</tr>
 				{/each}
-				<tr>
+				<tr class="hidden sm:block">
 					<th>
 						<select class="w-full max-w-xs select select-bordered" bind:value={item_name}>
 							<option disabled selected value="">Select Item</option>
@@ -259,5 +259,22 @@
 				</tr>
 			</tbody>
 		</table>
+		<div class="flex flex-col items-center justify-center gap-2 py-4 my-4 sm:hidden bg-base-100">
+			<p>Add new item</p>
+			<select class="w-full max-w-xs select select-bordered" bind:value={item_name}>
+				<option disabled selected value="">Select Item</option>
+				{#each sorted_items() as obj}
+					<option value={obj.name}>{obj.name}</option>
+				{/each}
+			</select>
+			<input
+				type="number"
+				name="item_quantity"
+				bind:value={item_quantity}
+				class="w-full max-w-xs input input-bordered"
+				placeholder="Quantity"
+			/>
+			<button class="btn btn-success" on:click={handleAddItem}> Add </button>
+		</div>
 	</div>
 </div>
