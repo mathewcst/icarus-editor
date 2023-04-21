@@ -57,7 +57,7 @@ export const items: Item[] = [
 		power_consumption: 1000,
 	},
 	{
-		name: 'Eletric Furnace',
+		name: 'Electric Furnace',
 		power_consumption: 2500,
 	},
 	{
