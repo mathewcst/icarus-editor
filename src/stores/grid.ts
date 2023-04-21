@@ -67,6 +67,19 @@ function createGridStore() {
 		})
 	}
 
+	const changeItemQuantity = (item: Item, grid_id: number, quantity: number) => {
+		update((value) => {
+			const grid = value.find(grid => grid.id === grid_id)
+			if (grid) {
+				const gridItem = grid.items.find(gridItem => gridItem.name === item.name)
+				if (gridItem) {
+					gridItem.quantity = quantity
+				}
+			}
+			return value
+		})
+	}
+
 	const createGrid = (grid_name: string) => {
 		const newGrid: Grid = {
 			id: initialValue.length + 1,
@@ -110,6 +123,7 @@ function createGridStore() {
 		subscribe,
 		addItemToGrid,
 		removeItemFromGrid,
+		changeItemQuantity,
 		createGrid,
 		deleteGrid,
 		renameGrid,

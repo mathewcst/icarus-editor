@@ -50,6 +50,18 @@
 		calculateTotalWaterGeneration();
 	};
 
+	const changeItemQuantity = (object: Item, quantity: number) => {
+		if (object.quantity) {
+			grid.changeItemQuantity(object, item.id, object?.quantity + quantity);
+		}
+
+		// Recalculate totals
+		calculateTotalPowerConsumption();
+		calculateTotalPowerGeneration();
+		calculateTotalWaterConsumption();
+		calculateTotalWaterGeneration();
+	};
+
 	const handleDeleteItem = (object: Item) => {
 		grid.removeItemFromGrid(object, item.id);
 
@@ -152,7 +164,19 @@
 				{#each item.items as object}
 					<tr>
 						<th>{object.name}</th>
-						<th>{object.quantity}</th>
+						<th>
+							<div class="flex flex-row items-center justify-start">
+								{object.quantity}
+								<div class="relative flex flex-col items-center justify-center ml-4">
+									<button on:click={() => changeItemQuantity(object, 1)} class="relative top-1">
+										<iconify-icon icon="material-symbols:keyboard-arrow-up-rounded" />
+									</button>
+									<button on:click={() => changeItemQuantity(object, -1)} class="relative bottom-1">
+										<iconify-icon icon="material-symbols:keyboard-arrow-down-rounded" />
+									</button>
+								</div>
+							</div>
+						</th>
 						<th>{powerGenerationTimesQuantity(object)}</th>
 						<th>{powerConsumptionTimesQuantity(object)}</th>
 						<th>{waterGenerationTimesQuantity(object)}</th>
