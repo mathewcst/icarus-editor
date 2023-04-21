@@ -23,7 +23,9 @@
 <header class="bg-base-300">
 	<div class="container max-w-screen-xl mx-auto navbar">
 		<div class="flex-1">
-			<a href="/" class="text-xl normal-case btn btn-ghost">Icarus Tools</a>
+			<a href="/">
+				<img src="/logo.png" alt="Icarus Tools" width="160" />
+			</a>
 		</div>
 		<div class="flex-none">
 			<ul class="gap-2 px-1 menu menu-horizontal">
