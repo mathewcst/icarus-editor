@@ -10,7 +10,7 @@
 
 			<div class="flex-auto" />
 
-			<p>v0.0.1</p>
+			<p>v0.1.1</p>
 		</div>
 	</div>
 </footer>
