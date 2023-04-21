@@ -1,5 +1,5 @@
 <footer class="flex flex-row items-center justify-center h-16 bg-base-300">
-	<div class="container max-w-screen-lg mx-auto">
+	<div class="container max-w-screen-xl mx-auto">
 		<div class="flex flex-row items-center justify-center">
 			<p>
 				Made by

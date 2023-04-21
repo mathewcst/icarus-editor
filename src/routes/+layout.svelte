@@ -11,7 +11,7 @@
 	<Header />
 
 	<main>
-		<div class="container max-w-screen-lg py-4 mx-auto">
+		<div class="container max-w-screen-xl py-4 mx-auto">
 			<slot />
 		</div>
 	</main>

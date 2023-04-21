@@ -14,6 +14,12 @@ const config = {
 		adapter: adapter(),
 		alias: {
 			$: './src/'
+		},
+		typescript: {
+			config(config) {
+				config.include.push('src/**/*.d.ts');
+				return config;
+			}
 		}
 	}
 };

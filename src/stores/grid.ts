@@ -3,9 +3,13 @@ import ls from 'localstorage-slim';
 import { browser } from "$app/environment";
 import { writable } from "svelte/store";
 
-import type { Item } from "$/lib/items";
+import type { Item } from '../lib/items';
 
 const STORE_NAME = 'grid'
+
+export interface ItemWithId extends Item {
+	id: number;
+}
 
 export interface Grid {
 	id: number;
@@ -14,7 +18,7 @@ export interface Grid {
 	power_consumption: number;
 	water_generation: number;
 	water_consumption: number;
-	items: Item[];
+	items: ItemWithId[];
 }
 
 const defaultValue: Grid[] = []
@@ -39,20 +43,15 @@ if (browser) {
 function createGridStore() {
 	const { subscribe, set, update } = writable<Grid[]>(initialValue)
 
-	const addItemToGrid = (item: Item, grid_id: number) => {
-		// Check if item is already in grid
-		const itemInGrid = initialValue.find(grid => grid.id === grid_id)?.items.find(gridItem => gridItem.name === item.name)
+	const addItemToGrid = (item: ItemWithId, grid_id: number) => {
 
-		// If item is not in grid, add it
-		if (!itemInGrid) {
-			update((value) => {
-				const grid = value.find(grid => grid.id === grid_id)
-				if (grid) {
-					grid.items.push(item)
-				}
-				return value
-			})
-		}
+		update((value) => {
+			const grid = value.find(grid => grid.id === grid_id)
+			if (grid) {
+				grid.items.push(item)
+			}
+			return value
+		})
 	}
 
 	const removeItemFromGrid = (item: Item, grid_id: number) => {
@@ -95,6 +94,16 @@ function createGridStore() {
 		})
 	}
 
+	const renameGrid = (grid_id: number, grid_name: string) => {
+		update((value) => {
+			const grid = value.find(grid => grid.id === grid_id)
+			if (grid) {
+				grid.name = grid_name
+			}
+			return value
+		})
+	}
+
 	const reset = () => set(defaultValue)
 
 	return {
@@ -103,6 +112,7 @@ function createGridStore() {
 		removeItemFromGrid,
 		createGrid,
 		deleteGrid,
+		renameGrid,
 		reset,
 		set
 	}

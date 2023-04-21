@@ -1,5 +1,6 @@
 export interface Item {
 	name: string;
+	quantity?: number;
 	power_generation?: number;
 	power_consumption?: number;
 	water_generation?: number;
@@ -158,6 +159,14 @@ export const items: Item[] = [
 	}
 ]
 
+export const sorted_items = () => {
+	return items.sort((a, b) => {
+		if (a.name < b.name) {
+			return -1;
+		}
+		return 1;
+	});
+}
 
 export const allGenerators = () => {
 	const generators = items.filter(item => item.power_generation);
@@ -165,3 +174,55 @@ export const allGenerators = () => {
 
 	return generators.concat(water_pumps);
 }
+
+export const allConsumers = () => {
+	const consumers = items.filter(item => item.power_consumption);
+	const water_consumers = items.filter(item => item.water_consumption);
+
+	return consumers.concat(water_consumers);
+}
+
+
+export const getItem = (name: string) => {
+	return items.find(item => item.name === name);
+}
+
+export const powerGenerationTimesQuantity = (item: Item) => {
+	const item_details = getItem(item.name);
+
+	if (item_details?.power_generation && item.quantity) {
+		return item_details?.power_generation * item.quantity;
+	} else {
+		return 0;
+	}
+};
+
+export const waterGenerationTimesQuantity = (item: Item) => {
+	const item_details = getItem(item.name);
+
+	if (item_details?.water_generation && item.quantity) {
+		return item_details?.water_generation * item.quantity;
+	} else {
+		return 0;
+	}
+};
+
+export const powerConsumptionTimesQuantity = (item: Item) => {
+	const item_details = getItem(item.name);
+
+	if (item_details?.power_consumption && item.quantity) {
+		return item_details?.power_consumption * item.quantity;
+	} else {
+		return 0;
+	}
+};
+
+export const waterConsumptionTimesQuantity = (item: Item) => {
+	const item_details = getItem(item.name);
+
+	if (item_details?.water_consumption && item.quantity) {
+		return item_details?.water_consumption * item.quantity;
+	} else {
+		return 0;
+	}
+};
