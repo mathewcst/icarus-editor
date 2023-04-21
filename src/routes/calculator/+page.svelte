@@ -16,7 +16,14 @@
 
 <h1 class="my-4 text-2xl font-bold uppercase">Calculator</h1>
 
-<div class="p-4 my-4 rounded-lg actions bg-base-200">
+<div class="flex flex-row items-center justify-between p-4 my-4 rounded-lg bg-base-200">
+	<p class="max-w-xl">
+		Create a grid for each power/water base you have. Your base would be a grid, a outpost to mine
+		Iron would be another, etc.
+	</p>
+
+	<div class="flex-auto" />
+
 	<form
 		on:submit|preventDefault={handleNewGrid}
 		class="flex flex-row items-center justify-end gap-4"
