@@ -17,11 +17,11 @@
 <h1 class="my-4 text-2xl font-bold uppercase">Calculator</h1>
 
 <div class="p-4 my-4 rounded-lg actions bg-base-200">
-	<form on:submit|preventDefault={handleNewGrid} class="flex flex-row items-center justify-center">
+	<form
+		on:submit|preventDefault={handleNewGrid}
+		class="flex flex-row items-center justify-end gap-4"
+	>
 		<div class="w-full max-w-xs form-control">
-			<label class="label" for="grid_name">
-				<span class="label-text">Grid Name</span>
-			</label>
 			<input
 				type="text"
 				id="grid_name"
@@ -31,7 +31,9 @@
 			/>
 		</div>
 
-		<button type="submit" class="btn btn-primary">New Grid</button>
+		<div class="flex flex-col items-center justify-center max-w-xs form-control">
+			<button type="submit" class="btn btn-primary">Add Grid</button>
+		</div>
 	</form>
 </div>
 

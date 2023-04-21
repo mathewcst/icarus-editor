@@ -210,27 +210,26 @@
 				</tr>
 				<tr>
 					<th>
-						<p>Power Left</p>
+						<p>Left</p>
 					</th>
 					<th />
 					<th>
-						<p class:text-red-500={total_power_left < 0}>{total_power_left}</p>
-					</th>
-					<th />
-					<th />
-					<th />
-					<th />
-				</tr>
-				<tr>
-					<th>
-						<p>Water Left</p>
+						<p
+							class:text-red-500={total_power_left < 0}
+							class:text-green-500={total_power_left > 0}
+						>
+							{total_power_left}
+						</p>
 					</th>
 					<th />
 					<th>
-						<p class:text-red-500={total_water_left < 0}>{total_water_left}</p>
+						<p
+							class:text-red-500={total_water_left < 0}
+							class:text-green-500={total_water_left > 0}
+						>
+							{total_water_left}
+						</p>
 					</th>
-					<th />
-					<th />
 					<th />
 					<th />
 				</tr>

@@ -35,6 +35,13 @@
 						</a>
 					</li>
 				{/each}
+				<li class="disabled">
+					<button class="disabled">
+						<iconify-icon icon="mdi:map" class="text-xl" />
+						Map
+						<div class="badge badge-error badge-sm">Soon</div>
+					</button>
+				</li>
 			</ul>
 		</div>
 	</div>
