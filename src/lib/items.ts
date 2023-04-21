@@ -156,6 +156,14 @@ export const items: Item[] = [
 		name: 'Electric Masonry Bench',
 		power_consumption: 2000,
 		water_consumption: 250,
+	},
+	{
+		name: 'Basic Wall Light',
+		power_consumption: 150,
+	},
+	{
+		name: 'Basic Ceiling Light',
+		power_consumption: 150,
 	}
 ]
 
