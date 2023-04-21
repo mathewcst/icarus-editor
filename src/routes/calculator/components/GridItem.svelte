@@ -187,7 +187,7 @@
 						</th>
 					</tr>
 				{/each}
-				<tr class="hidden sm:block">
+				<tr class="hidden sm:table-row">
 					<th>
 						<select class="w-full max-w-xs select select-bordered" bind:value={item_name}>
 							<option disabled selected value="">Select Item</option>
