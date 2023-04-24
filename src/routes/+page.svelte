@@ -13,14 +13,16 @@
 				This is just some tools that I wish I had when playing. I hope you find them useful!
 			</p>
 
-			<div class="flex flex-row items-center justify-center">
-				<a href="/calculator" class="btn btn-primary">Calculator</a>
+			<div class="flex flex-row items-center justify-center gap-4">
+				<a href="/calculator" class="btn btn-primary">
+					<iconify-icon icon="mdi:calculator-variant-outline" class="text-xl" />
+					Calculator
+				</a>
 
-				<button class="btn btn-ghost btn-disabled">
+				<a href="/Profile" class="btn btn-primary">
 					<iconify-icon icon="material-symbols:lab-profile-outline" class="text-xl" />
 					Profile Editor
-					<div class="ml-2 badge badge-error badge-sm">Soon</div>
-				</button>
+				</a>
 			</div>
 		</div>
 	</div>

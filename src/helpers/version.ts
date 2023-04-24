@@ -24,6 +24,11 @@ export const versions: Version[] = [
 		version: '0.1.3',
 		date: new Date('04/23/2023'),
 		description: 'Created Chagelog page'
+	},
+	{
+		version: '0.1.4',
+		date: new Date('04/24/2023'),
+		description: 'Add Profile Editor'
 	}
 ]
 
