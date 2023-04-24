@@ -147,15 +147,18 @@
 <div class="flex flex-col">
 	{#if profile}
 		<div class="collapse" class:collapse-open={collapsed}>
-			<div class="flex flex-row items-center justify-start">
-				<p class="text-xl font-medium collapse-title">Profile.json</p>
-				<button class="btn btn-ghost" on:click={() => (collapsed = !collapsed)}>
-					{#if collapsed}
-						Hide
-					{:else}
-						Show
-					{/if}
-				</button>
+			<div
+				class="flex flex-row items-center justify-start bg-base-300"
+				on:click={() => (collapsed = !collapsed)}
+				on:keydown={(e) => {
+					if (e.key === 'Enter') {
+						collapsed = !collapsed;
+					}
+				}}
+			>
+				<p class="text-xl font-medium collapse-title">
+					Here you can expand and copy your new <kbd class="kbd">Profile.json</kbd> to your clipboard.
+				</p>
 			</div>
 			<div class="collapse-content">
 				<ProfileJson {profile} {code} />
