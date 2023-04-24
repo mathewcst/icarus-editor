@@ -16,6 +16,9 @@ dependencies:
   localstorage-slim:
     specifier: ^2.4.0
     version: 2.4.0
+  neatjson:
+    specifier: ^0.10.6
+    version: 0.10.6
 
 devDependencies:
   '@sveltejs/adapter-auto':
@@ -42,6 +45,9 @@ devDependencies:
   eslint-plugin-svelte3:
     specifier: ^4.0.0
     version: 4.0.0(eslint@8.39.0)(svelte@3.58.0)
+  highlight.js:
+    specifier: ^11.7.0
+    version: 11.7.0
   postcss:
     specifier: ^8.4.23
     version: 8.4.23
@@ -57,6 +63,9 @@ devDependencies:
   svelte-check:
     specifier: ^3.2.0
     version: 3.2.0(postcss@8.4.23)(svelte@3.58.0)
+  svelte-highlight:
+    specifier: ^7.2.1
+    version: 7.2.1
   tailwindcss:
     specifier: ^3.3.1
     version: 3.3.1(postcss@8.4.23)
@@ -1192,6 +1201,11 @@ packages:
     dependencies:
       function-bind: 1.1.1
 
+  /highlight.js@11.7.0:
+    resolution: {integrity: sha512-1rRqesRFhMO/PRF+G86evnyJkCgaZFOI+Z6kdj15TA18funfoqJXvgPCLSf0SWq3SRfg1j3HlDs8o4s3EGq1oQ==}
+    engines: {node: '>=12.0.0'}
+    dev: true
+
   /iconify-icon@1.0.7:
     resolution: {integrity: sha512-MxaO3Jhf3f5ymPWGHR9x74f90TNKcq1D+B2iGucGhVtqAgbC9EtM06kKiTGH2CKELNnexckwhrA3/+OpT4HKFw==}
     dependencies:
@@ -1421,6 +1435,10 @@ packages:
   /natural-compare@1.4.0:
     resolution: {integrity: sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==}
     dev: true
+
+  /neatjson@0.10.6:
+    resolution: {integrity: sha512-X2qnehhhuy+P7k5/OzpNIi+3G+PZbnbwz6/xEsE4FomWHRPybnvoD+TgAL1XL9vjtgEMdZ3a3xDi8HzRF/gzzw==}
+    dev: false
 
   /node-releases@2.0.10:
     resolution: {integrity: sha512-5GFldHPXVG/YZmFzJvKK2zDSzPKhEp0+ZR5SVaoSag9fsL5YgHbUHDfnG5494ISANDcK4KwPXAx2xqVEydmd7w==}
@@ -1814,6 +1832,12 @@ packages:
       - sass
       - stylus
       - sugarss
+    dev: true
+
+  /svelte-highlight@7.2.1:
+    resolution: {integrity: sha512-Qyxd4CFbvufKo661AmtIFLFh7bW8BZ6G5vUGYdRlyhaoWEOCyCgKimdKW8/8aJ4/kKidSFbgY/2/fyzwYDEjWg==}
+    dependencies:
+      highlight.js: 11.7.0
     dev: true
 
   /svelte-hmr@0.15.1(svelte@3.58.0):

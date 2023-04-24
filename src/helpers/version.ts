@@ -26,3 +26,6 @@ export const versions: Version[] = [
 		description: 'Created Chagelog page'
 	}
 ]
+
+
+export const latestVersion = versions[versions.length - 1]

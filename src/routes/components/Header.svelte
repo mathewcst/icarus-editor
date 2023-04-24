@@ -16,6 +16,17 @@
 			name: 'Calculator',
 			link: '/calculator',
 			icon: 'mdi:calculator-variant-outline'
+		},
+
+		{
+			name: 'Profile Editor',
+			link: '/profile',
+			icon: 'material-symbols:lab-profile-outline'
+		},
+		{
+			name: 'Changelog',
+			link: '/changelog',
+			icon: 'material-symbols:family-history'
 		}
 	];
 </script>
@@ -37,13 +48,13 @@
 						</a>
 					</li>
 				{/each}
-				<li class="hidden disabled sm:block">
+				<!--<li class="hidden disabled sm:block">
 					<button class="disabled">
 						<iconify-icon icon="material-symbols:lab-profile-outline" class="text-xl" />
 						Profile Editor
 						<div class="badge badge-error badge-sm">Soon</div>
 					</button>
-				</li>
+				</li>-->
 			</ul>
 		</div>
 	</div>

@@ -1,5 +1,6 @@
 <script lang="ts">
 	import grid from '$/stores/grid';
+	import PageTitle from '../components/PageTitle.svelte';
 	import GridItem from './components/GridItem.svelte';
 
 	let grid_name: string;
@@ -14,7 +15,7 @@
 	<title>Power Calculator | Icarus Tools</title>
 </svelte:head>
 
-<h1 class="my-4 text-2xl font-bold uppercase">Calculator</h1>
+<PageTitle>Calculator</PageTitle>
 
 <div class="flex flex-col items-center justify-between p-4 my-4 rounded-lg sm:flex-row bg-base-200">
 	<p class="max-w-xl">
