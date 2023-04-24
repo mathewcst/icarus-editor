@@ -10,7 +10,9 @@
 
 			<div class="flex-auto" />
 
-			<p>v0.1.2</p>
+			<p>
+				<a href="/changelog" class="link">v0.1.2</a>
+			</p>
 		</div>
 	</div>
 </footer>

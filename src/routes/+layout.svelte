@@ -3,6 +3,7 @@
 	import '@fontsource/lato';
 	import 'iconify-icon';
 
+	import Container from '$/components/Container.svelte';
 	import Footer from './components/Footer.svelte';
 	import Header from './components/Header.svelte';
 </script>
@@ -11,9 +12,9 @@
 	<Header />
 
 	<main>
-		<div class="container max-w-screen-xl py-4 mx-auto">
+		<Container>
 			<slot />
-		</div>
+		</Container>
 	</main>
 
 	<Footer />
@@ -21,6 +22,6 @@
 
 <style>
 	main {
-		min-height: calc(100vh - 8rem);
+		min-height: calc(100vh - 9rem);
 	}
 </style>
