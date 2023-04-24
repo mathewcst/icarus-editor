@@ -78,7 +78,10 @@
 	<div class="grid w-full grid-cols-3 gap-4">
 		<div class="w-full max-w-xs form-control">
 			<label class="label" for="refunds">
-				<span class="label-text">Refunds</span>
+				<span class="flex flex-row items-center justify-start label-text">
+					Refunds
+					<img src="/images/talent.png" width="20" alt="Talent Icon" class="ml-2" />
+				</span>
 			</label>
 			<input
 				type="number"
@@ -93,7 +96,10 @@
 
 		<div class="w-full max-w-xs form-control">
 			<label class="label" for="credits">
-				<span class="label-text">Credits</span>
+				<span class="flex flex-row items-center justify-start label-text">
+					Ren
+					<img src="/images/ren.png" width="20" alt="Talent Icon" class="ml-2" />
+				</span>
 			</label>
 			<input
 				type="number"
@@ -108,7 +114,10 @@
 
 		<div class="w-full max-w-xs form-control">
 			<label class="label" for="exotics">
-				<span class="label-text">Exotics</span>
+				<span class="flex flex-row items-center justify-start label-text">
+					Exotics
+					<img src="/images/exotic.png" width="20" alt="Talent Icon" class="ml-2" />
+				</span>
 			</label>
 			<input
 				type="number"
