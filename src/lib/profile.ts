@@ -1,6 +1,6 @@
 interface MetaResource {
 	MetaRow: string;
-	Count: string;
+	Count: number;
 }
 
 interface UnlockedFlag {
@@ -52,15 +52,25 @@ export const styxMapTalents = [
 export const unlockStyxMap = (profile: Profile) => {
 	const currentTalents = profile.Talents;
 
-	//Check if the talent is already unlocked
-	const styxMapTalentsUnlocked = hasStyxUnlocked(profile);
+	profile.Talents = currentTalents.concat(styxMapTalents);
 
-	if (!styxMapTalentsUnlocked) {
-		profile.Talents = [...currentTalents, ...styxMapTalents];
-	}
+	console.log(profile)
 
 	return profile;
 
+}
+
+export const removeStyxMap = (profile: Profile) => {
+	const currentTalents = profile.Talents;
+
+	profile.Talents = currentTalents.filter(talent => {
+		return !styxMapTalents.some(styxTalent => {
+			return styxTalent.RowName === talent.RowName && styxTalent.Rank === talent.Rank;
+		})
+	})
+
+
+	return profile;
 }
 
 export const hasStyxUnlocked = (profile: Profile) => {

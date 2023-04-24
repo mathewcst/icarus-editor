@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { Profile } from '$/lib/profile';
+	import { hasStyxUnlocked, removeStyxMap, unlockStyxMap, type Profile } from '$/lib/profile';
 
 	import a11yDark from 'svelte-highlight/styles/a11y-dark';
 
@@ -10,12 +10,44 @@
 	import ProfileJson from './components/ProfileJSON.svelte';
 
 	let profile: Profile | null = null;
+	let collapsed = false;
 
 	const handleLoadedProfile = (event: CustomEvent<Profile>) => {
 		profile = event.detail;
+
+		refunds = profile.MetaResources[0].Count;
+		credits = profile.MetaResources[1].Count;
+		exotics = profile.MetaResources[2].Count;
+
+		styx_unlocked = hasStyxUnlocked(profile);
 	};
 
+	let refunds = 0;
+	let credits = 0;
+	let exotics = 0;
+	let styx_unlocked = false;
+
 	$: code = profile ? JSON.stringify(profile, null, '\t') : null;
+
+	const handleUpdateJSON = () => {
+		if (profile) {
+			profile.MetaResources[0].Count = refunds;
+			profile.MetaResources[1].Count = credits;
+			profile.MetaResources[2].Count = exotics;
+		}
+	};
+
+	const handleStyxUnlocks = (event: Event) => {
+		var input = event.target as HTMLInputElement;
+
+		if (profile) {
+			if (input.checked) {
+				profile = unlockStyxMap(profile);
+			} else {
+				profile = removeStyxMap(profile);
+			}
+		}
+	};
 </script>
 
 <svelte:head>
@@ -42,8 +74,83 @@
 	<LoadFile on:profile={handleLoadedProfile} />
 </div>
 
+<div class="flex flex-col items-center justify-between p-4 my-4 rounded-lg sm:flex-row bg-base-200">
+	<div class="grid w-full grid-cols-3 gap-4">
+		<div class="w-full max-w-xs form-control">
+			<label class="label" for="refunds">
+				<span class="label-text">Refunds</span>
+			</label>
+			<input
+				type="number"
+				name="refunds"
+				id="refunds"
+				placeholder="Type here"
+				class="w-full max-w-xs input input-bordered"
+				bind:value={refunds}
+				on:change={handleUpdateJSON}
+			/>
+		</div>
+
+		<div class="w-full max-w-xs form-control">
+			<label class="label" for="credits">
+				<span class="label-text">Credits</span>
+			</label>
+			<input
+				type="number"
+				name="credits"
+				id="credits"
+				placeholder="Type here"
+				class="w-full max-w-xs input input-bordered"
+				bind:value={credits}
+				on:change={handleUpdateJSON}
+			/>
+		</div>
+
+		<div class="w-full max-w-xs form-control">
+			<label class="label" for="exotics">
+				<span class="label-text">Exotics</span>
+			</label>
+			<input
+				type="number"
+				name="exotics"
+				id="exotics"
+				placeholder="Type here"
+				class="w-full max-w-xs input input-bordered"
+				bind:value={exotics}
+				on:change={handleUpdateJSON}
+			/>
+		</div>
+
+		<div class="form-control">
+			<label class="cursor-pointer label">
+				<span class="label-text">Unlock Styx Zones</span>
+				<input
+					type="checkbox"
+					checked={styx_unlocked}
+					class="checkbox"
+					on:change={handleStyxUnlocks}
+				/>
+			</label>
+		</div>
+	</div>
+</div>
+
 <div class="flex flex-col">
 	{#if profile}
-		<ProfileJson {profile} {code} />
+		<div class="collapse" class:collapse-open={collapsed}>
+			<div class="flex flex-row items-center justify-start">
+				<p class="text-xl font-medium collapse-title">Profile.json</p>
+				<button class="btn btn-ghost" on:click={() => (collapsed = !collapsed)}>
+					{#if collapsed}
+						Hide
+					{:else}
+						Show
+					{/if}
+				</button>
+			</div>
+			<div class="collapse-content">
+				<ProfileJson {profile} {code} />
+			</div>
+		</div>
 	{/if}
 </div>
