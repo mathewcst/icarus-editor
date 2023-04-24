@@ -3,7 +3,7 @@
 	import '@fontsource/lato';
 	import 'iconify-icon';
 
-	import Container from '$/components/Container.svelte';
+	import Container from './components/Container.svelte';
 	import Footer from './components/Footer.svelte';
 	import Header from './components/Header.svelte';
 </script>
