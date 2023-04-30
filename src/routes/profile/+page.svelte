@@ -9,6 +9,8 @@
 	import PathKbd from './components/PathKBD.svelte';
 	import ProfileJson from './components/ProfileJSON.svelte';
 
+	// TODO: allow to unlcok other missions
+
 	let profile: Profile | null = null;
 	let collapsed = false;
 

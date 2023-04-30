@@ -22,18 +22,13 @@
 			name: 'Profile Editor',
 			link: '/profile',
 			icon: 'material-symbols:lab-profile-outline'
-		},
-		{
-			name: 'Changelog',
-			link: '/changelog',
-			icon: 'material-symbols:family-history'
 		}
 	];
 </script>
 
 <header class="bg-base-300">
 	<div class="container max-w-screen-xl mx-auto navbar">
-		<div class="flex-1">
+		<div class="flex-1 hidden sm:block">
 			<a href="/">
 				<img src="/logo.png" alt="Icarus Tools" width="160" />
 			</a>
@@ -48,7 +43,13 @@
 						</a>
 					</li>
 				{/each}
-				<li>
+				<li class="hidden sm-block">
+					<a href="/changelog">
+						<iconify-icon icon="material-symbols:family-history" class="hidden text-xl sm:block" />
+						Changelog
+					</a>
+				</li>
+				<li class="hidden sm-block">
 					<a href="https://ko-fi.com/mathewcst" target="_blank" rel="noreferrer" class="btn-error">
 						<iconify-icon icon="simple-icons:kofi" class="hidden text-xl sm:block" />
 						Buy me a coffee
