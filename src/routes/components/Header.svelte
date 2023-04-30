@@ -48,6 +48,12 @@
 						</a>
 					</li>
 				{/each}
+				<li>
+					<a href="https://ko-fi.com/mathewcst" target="_blank" rel="noreferrer" class="btn-error">
+						<iconify-icon icon="simple-icons:kofi" class="hidden text-xl sm:block" />
+						Buy me a coffee
+					</a>
+				</li>
 				<!--<li class="hidden disabled sm:block">
 					<button class="disabled">
 						<iconify-icon icon="material-symbols:lab-profile-outline" class="text-xl" />
