@@ -9,6 +9,8 @@
 		grid.createGrid(grid_name);
 		grid_name = '';
 	};
+
+	// TODO: allow to set custom values for generators or other items (ex: BioFuel generator provides 5000 energy)
 </script>
 
 <svelte:head>
